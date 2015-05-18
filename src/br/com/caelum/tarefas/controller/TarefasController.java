@@ -59,7 +59,7 @@ public class TarefasController {
 		return "redirect:listaTarefas";
 	}
 	
-	@RequestMapping(value = "finalizaTarefa", method = RequestMethod.GET)
+	@RequestMapping(value = "finalizaTarefa", method = RequestMethod.POST)
 	public String finaliza(Long id, Model model) {
 		JdbcTarefaDao dao = new JdbcTarefaDao();
 		dao.finaliza(id);
