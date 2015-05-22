@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Tarefa {
@@ -23,9 +24,10 @@ public class Tarefa {
 	@Size(min=5, message="{tarefa.descricao.pequena}")
 	@NotBlank(message="{tarefa.descricao.vazia}")
 	private String descricao;
+	
 	private boolean finalizado;
 	
-	//@DateTimeFormat(pattern="dd/MM/yyyy")
+	@DateTimeFormat(pattern="dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataFinalizacao;
 
